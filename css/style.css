@@ -1,0 +1,683 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* all pages*/
+
+body{ background-color: #000000;
+
+      }
+
+#container{ width: 900px;
+            margin: 0px auto;
+            overflow: auto;
+            overflow-x: hidden;
+            overflow-y: hidden;
+	        border-radius: 5px;
+	        background-color: #000000;
+
+            }
+
+
+
+#header{ float:left;
+         position:relative;
+         width:900px;
+		 height:auto;
+		 margin-top:0px;
+		 padding:5px 0px 5px 0px;
+		 background-color:#262628;
+
+	     }
+
+#links{ float:left;
+        position:relative;
+        width:auto;
+		height:auto;
+		margin-left:10px;
+
+	    }
+
+#links div{ float:left;
+          width:auto;
+		  height:auto;
+		  padding:0px 5px 0px 5px;
+		  border-right:1px solid #b6b7ba;
+
+          }
+
+#links div:last-child{ border-right:none;
+
+			        }
+
+#links a{ color:#2db1f5;
+         text-decoration:underline;
+
+	     }
+
+#links a:hover{ color:#ffffff;
+               text-decoration:underline;
+
+	           }
+
+#personal-info{ float:left;
+                position:relative;
+                width:900px;
+                height:auto;
+				margin-bottom:20px;
+				background-color:#262628;
+				padding:5px 0px 5px 0px;
+
+                }
+
+#welcome{ float:left;
+          position:relative;
+          width:auto;
+          height:auto;
+		  margin-left:10px;
+		  color:#b6b7ba;
+
+          }
+
+#welcome name{ color:#03f93d;
+
+              }
+
+#info-free{ float:right;
+             position:relative;
+             width:200px;
+             height:auto;
+             margin-top:10px;
+             margin-right:5px;
+			 word-wrap:break word;
+
+            }
+
+#info-free b{ float:left;
+              margin-bottom:10px;
+              color:#b6b7ba;
+              font-size:16px;
+
+			 }
+
+#info-free name{ color:#03f93d;
+
+                }
+
+#info { float: left;
+        position: absolute;
+        width: 900px;
+        bottom:0px;
+
+		}
+
+
+#info h5{ position: relative;
+         text-align: center;
+		 color: #ffffff;
+		 letter-spacing: 1px;
+
+		  }
+
+/* index */
+
+
+#login{ float:left;
+        position:relative;
+        width:900px;
+		height:auto;
+		margin-top:20px;
+		background-color: #262628;
+
+	    }
+
+#loginForm{ float:left;
+            position:relative;
+            width:auto;
+		    height:auto;
+			margin-left:10px;
+            background-color: #1d1d1d;
+
+	        }
+
+#loginForm div{ width:auto;
+		      height:auto;
+              margin-top:5px;
+			  color:#b6b7ba;
+
+              }
+
+#errorMessageLogin{ float:left;
+                    position:relative;
+                    width:auto;
+                    height:auto;
+                    margin-top:30px;
+                    margin-left:5px;
+                    color: #f9122d;
+					letter-spacing:1px;
+
+	                }
+
+
+
+/* index, books, (and all)*/
+
+#footer{ float:left;
+         position:relative;
+		 width:900px;
+         min-height:500px;
+         margin-top:20px;
+		 background-color:#262628;
+
+	     }
+
+#menu-criteria{ float:left;
+                position:relative;
+                width:900px;
+				height:auto;
+
+				}
+
+#footer-search{ float:left;
+                position:relative;
+                width:auto;
+				height:auto;
+				margin-left:10px;
+
+				}
+
+#footer-search div{ float:left;
+                  margin-right:5px;
+                  color:#b6b7ba;
+
+                  }
+
+
+#footer-filter{ float:left;
+                position:relative;
+                width:auto;
+				height:auto;
+                margin-left:10px;
+
+	            }
+
+#footer-filter div{ float:left;
+                  margin-right:5px;
+                  color:#b6b7ba;
+
+                  }
+
+#footer-data{ float:left;
+		      position:relative;
+			  width:900px;
+			  height:auto;
+			  margin-top:10px;
+			  margin-left:5px;
+
+	          }
+
+#footer-data table{ width:890px;
+		          border-collapse: collapse;
+
+                  }
+
+#footer-data table,th,tr,td{ border: 1px solid #1d1d1d;
+
+                         }
+
+#footer-data  th{ background-color: 1d1d1d;
+                color: #b6b7ba;
+
+			    }
+
+#footer-data tr{ background-color: #3d3e3d;
+
+               }
+
+#footer-data tr:hover { background-color: #636564;
+
+                      }
+
+#footer-data  td{ padding-left:10px;
+                color: #b6b7ba;
+                color: #b6b7ba;
+
+			    }
+
+#footer-data a{ color:#2db1f5;
+               text-decoration:underline;
+
+               }
+
+#footer-data a:hover{ color:ffffff;
+                     text-decoration:underline;
+
+                     }
+
+#comments_link{ float:left;
+                margin-left:-5px;
+
+                }
+
+/* index, books, comments */
+
+#footer-pages{ float:left;
+		       position:relative;
+			   width:900px;
+			   margin-top:20px;
+			   margin-bottom:40px;
+
+	           }
+
+#pages{ float:left;
+		position:relative;
+		width:800px;
+		margin-left:10px;
+		margin-bottom:20px;
+		text-align:center;
+
+	    }
+
+#pages a{ padding-right:5px;
+         border-right:1px solid #000000;
+
+		 }
+
+#pages a:last-child{ border-right:none;
+
+			        }
+
+a{ color:#b6b7ba;
+   text-decoration:none;
+
+   }
+
+a:hover{ color:ffffff;
+         text-decoration:none;
+
+         }
+
+#activePage{ color:#03f93d;
+             text-decoration:underline;
+
+             }
+
+/* index */
+
+#errorMessageBookAuthor{ float:left;
+                         display:none;
+                         width:auto;
+						 margin-left:10px;
+                         color:f9122d;
+		                 letter-spacing:1px;
+
+                         }
+
+#errorMessageComments{ float:left;
+                       display:none;
+                       width:800px;
+					   margin-left:10px;
+                       color:f9122d;
+		               letter-spacing:1px;
+
+                       }
+
+#messageSearchBookAndAuthor{ float:left;
+                             width:800px;
+					         margin-left:10px;
+                             color:#b6b7ba;
+		                     letter-spacing:1px;
+
+					        }
+
+/* registration */
+
+p{ font-size: 18px;
+   color:#03f93d;
+   margin-left:10px;
+
+  }
+
+#registerForm{ float:left;
+               position:relative;
+               width:auto;
+			   height:auto;
+			   margin-left:10px;
+			   margin-top:10px;
+			   padding:5px 5px 0px 5px;
+               background-color:#3d3e3d;
+               color:#b6b7ba;
+
+               }
+
+ #left-registerForm{ float:left;
+
+                     }
+
+ #left-registerForm div{ width:auto;
+		               height:40px;
+
+					   }
+
+ #right-registerForm{ float:left;
+                      margin-left:10px;
+
+					  }
+
+#right-registerForm div{ width:auto;
+		               height:40px;
+
+					   }
+
+#errorMessageRegister{ float:left;
+                       position:relative;
+                       width:auto;
+					   margin-top:15px;
+					   margin-left:5px;
+					   color: #f9122d;
+					   letter-spacing:1px;
+
+					   }
+
+#errorMessageRegister div{ height:40px;
+                         font-size: 14px
+
+					     }
+
+
+/* comments */
+
+#addCommentLink{ float:left;
+                 width:900px;
+	             height:auto;
+	             margin-left:0px;
+			     margin-top:20px;
+			     background-color:#262628;
+			     text-align:center;
+
+                 }
+
+#addCommentLink a{ margin-left:10px;
+                  font-size:20px;
+                  text-decoration:underline;
+
+                  }
+
+#messageAddComment{ color:#03f93d;
+
+                   }
+
+#errorMessageAddComment{ color:#f9122d;
+                         letter-spacing:1px;
+
+						}
+
+#comments-filter{ float:right;
+                  position:relative;
+                  width:auto;
+				  height:auto;
+                  margin-right:55px;
+				  padding-top:10px;
+				  color:#b6b7ba;
+
+	              }
+
+#comments-filter div{	float:left;
+                    margin-right:5px;
+
+				    }
+
+#commentForm{ float:left;
+              display:none;
+              width:900px;
+			  height:auto;
+			  margin-left:0px;
+              background-color:#262628;
+			  text-align:center;
+			  color:#b6b7ba;
+
+              }
+
+#commentForm font{ margin-right:5px;
+
+				}
+
+#comment-data{ float:left;
+               position:relative;
+			   width:801;
+			   height:auto;
+			   border:1px solid #1d1d1d;
+			   margin-left:45px;
+			   margin-top:10px;
+			   color: #b6b7ba;
+
+			   }
+
+#row{ float:left;
+      position:relative;
+	  width:auto;
+	  height:auto;
+	  background-color:#3d3e3d;
+
+	  }
+
+#row-user{ float:left;
+           position:relative;
+		   width:250px;
+		   height:40px;
+		   background-color:#1d1d1d;
+
+		   }
+
+#row-user div{ position:relative;
+             width:auto;
+			 height:auto;
+			 margin:10px;
+			 margin:20px 0px 0px 5px;
+
+			 }
+
+#row-date-publish{ float:left;
+                   position:relative;
+				   width:551px;
+				   height:40px;
+				   background-color:#1d1d1d;
+
+				   }
+
+#row-date-publish div{ float:left;
+                     position:relative;
+                     width:auto;
+					 height:auto;
+					 margin:20px 0px 0px 5px;
+
+					 }
+
+#column{ float:left;
+         position:relative;
+		 width:250px;
+		 height:auto;
+
+	     }
+
+#column-left{ float:left;
+              position:relative;
+			  width:110px;
+			  height:25px;
+			  border-top:1px solid #1d1d1d;
+			  text-align:right;
+
+			  }
+
+#column-left b{ margin-right:10px;
+
+			  }
+
+#column-right{ float:right;
+               position:relative;
+			   width:140px;
+			   height:25px;
+			   border-top:1px solid #1d1d1d;
+			   text-align:left;
+
+			   }
+
+#comment-content{ float:left;
+                  position:relative;
+				  width:550px;
+				  height:129px;
+				  border-left:1px solid #1d1d1d;
+				  border-top:1px solid #1d1d1d;
+
+			  	  }
+
+#comment-content div{ position:relative;
+                    width:auto;
+					height:auto;
+					margin:10px;
+					word-wrap: break-word;
+
+				    }
+
+#errorMessageCommentsList{
+                       width:900px;
+			           height:auto;
+			           color:#b6b7ba;
+			           text-align:center;
+
+
+                      }
+
+#pageTitle-comments{ float:left;
+                     position:relative;
+			         width:auto;
+			         height:auto;
+                     color:#b6b7ba;
+			         font-size:20px;
+			         margin-left:45px;
+			         padding:10px;
+
+			         }
+
+/* books */
+
+#pageTitle-books{ float:left;
+                  position:relative;
+			      width:900px;
+			      height:auto;
+                  color:#b6b7ba;
+			      font-size:24px;
+			      margin-left:10px;
+			      padding:10px 0px 10px 0px;
+				  text-align:left;
+
+			      }
+
+/* addBook */
+
+#pageTitle-addBook{ float:left;
+                    position:relative;
+			        width:auto;
+			        height:auto;
+                    color:#b6b7ba;
+			        font-size:20px;
+			        margin-left:0px;
+			        padding:10px;
+
+			        }
+
+#book-data{ float:left;
+            position:relative;
+			width:880px;
+			min-height:200px;
+			background-color:#3d3e3d;
+			color:#b6b7ba;
+			margin:10px;
+			padding:10px 0px 10px 0px;
+
+		    }
+
+#bookForm{ float:left;
+           position:relative;
+		   width:200px;
+		   height:auto;
+
+		   }
+
+#bookForm  div{ float:right;
+              margin-bottom:5px;
+
+			  }
+
+/* addAuthor */
+
+#pageTitle-addAuthor{ float:left;
+                      position:relative;
+			          width:auto;
+			          height:auto;
+                      color:#b6b7ba;
+			          font-size:20px;
+			          margin-left:0px;
+			          padding:10px;
+
+			          }
+
+#author-data{ float:left;
+              position:relative;
+			  width:880px;
+			  min-height:200px;
+			  background-color:#3d3e3d;
+			  color:#b6b7ba;
+			  margin:10px;
+			  padding:10px 0px 10px 0px;
+
+			  }
+
+#authorForm{ float:left;
+             position:relative;
+			 width:350px;
+			 height:auto;
+			 color:#b6b7ba;
+
+			 }
+
+#authorForm  div{ float:left;
+                margin-left:5px;
+
+			    }
+
+#authorList{ float:left;
+             position:relative;
+			 width:200px;
+			 height:auto;
+
+			 }
+
+#authorList div{ float:right;
+               margin-bottom:5px;
+
+			   }
+
+#authorList select{ width:160px;
+
+				  }
+
+/*addBook, addAuthor*/
+#errorMessageBookAndAuthor{ float:left;
+                            position: relative;
+			                width: 900px;
+			                height:auto;
+					        margin-left:10px;
+			                color:f9122d;
+		                    letter-spacing:1px;
+
+			               }
+
+#messageBookAndAuthor{ float:left;
+                       position: relative;
+			           width: 900px;
+			           height:auto;
+				       margin-left:10px;
+			           color:#03f93d;
+		               letter-spacing:1px;
+
+                      }
