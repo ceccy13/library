@@ -23,6 +23,12 @@ class HomeController extends BaseController{
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
     public function index(){
+		
+		try {
+            DB::connection()->getPdo();
+        } catch (\Exception $e) {
+            die("Could not connect to the database! <br><br> Check settings and if DB is imported successfully! ");
+        }
       
 /* Ако потребителя има валидна сесия го пренасочваме към страница books 
   (Returning A Redirect To A Controller Action books) */
