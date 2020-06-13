@@ -3,7 +3,8 @@ namespace App;
 
 use Illuminate\Support\Facades\DB;
 
-class Books {
+class Books
+{
     private $book_id;
     private $book_name;
     private $date_publish;
@@ -31,7 +32,8 @@ class Books {
                            );
     
 //С този метод добавяме нова книга с автори към нея
-    public function setBook($book_name,$authors_ids) {
+    public function setBook($book_name,$authors_ids)
+    {
 //Ако има POST заявка, кодът се изпълнява        
         if($_POST){
               
@@ -124,7 +126,8 @@ class Books {
 }
 
 //Метод за извеждане на списъка за книги
-    public function getBooks($sort,$author_id,$page,$search) {
+    public function getBooks($sort,$author_id,$page,$search)
+    {
 //Правим нормализация на входящите данни(критерии) от глобалната GET 
         $this->sort=(int)$sort;
         $this->author_id=(int)$author_id;
@@ -268,110 +271,94 @@ else{
   
 }
 //Метод за извеждане на последно избраните критерии във view-то
- public function getSelectedSort(){
-            
-            return $this->insertedData=array(
-                
-                   '0'=>'',
-                   '1'=>'',
-                   '2'=>'',
-                   '3'=>'',
-                   '4'=>'',
-                   '5'=>'',
-                   $this->sort=>'selected',
-                   'selectedSort'=>$this->sort, 
-                   'selectedPage'=>$this->page,
-                   'author_id'=>$this->author_id,
-                   'search'=>$this->search
-                 
-                   );
-
- }
+    public function getSelectedSort()
+    {
+        return $this->insertedData=array(
+                '0'=>'',
+                '1'=>'',
+                '2'=>'',
+                '3'=>'',
+                '4'=>'',
+                '5'=>'',
+                $this->sort=>'selected',
+                'selectedSort'=>$this->sort,
+                'selectedPage'=>$this->page,
+                'author_id'=>$this->author_id,
+                'search'=>$this->search
+                );
+    }
 //Метод за извеждане броя на страниците за коментарите
- public function getPages(){
-    
-            return $this->pages;
-            
- }
+    public function getPages()
+    {
+    return $this->pages;
+    }
 //Метод за извеждане на съобщения за грешка
- public function getErrorMessage(){
-    
-            return $this->errorMessage;
-            
- }
+    public function getErrorMessage()
+    {
+    return $this->errorMessage;
+    }
 //Метод за записване на съобщения 
-  public function setMessage(){
+    public function setMessage()
+    {
 //Ако е въведено име на книга
-          if($this->insertedBook){
-//За всяко въведено id на автор към книгата, записваме името на автора в масива $this->insertedAuthors     
-       foreach($this->authors_ids as $key=>$author_id){
-          
-                        $insertedAuthor=DB::select('SELECT author_name FROM authors
-                                                    WHERE author_id=?
-                                                    LIMIT 1'
-                                                   ,array($author_id));
-                        
-                        
-                        $this->insertedAuthors[$key]=$insertedAuthor[0]->author_name;
-                        
-                        }
+        if($this->insertedBook){
+//За всяко въведено id на автор към книгата, записваме името на автора в масива $this->insertedAuthors
+        foreach($this->authors_ids as $key=>$author_id){
+            $insertedAuthor=DB::select('SELECT author_name FROM authors
+                                        WHERE author_id=?
+                                        LIMIT 1'
+                                       ,array($author_id)
+                            );
+
+            $this->insertedAuthors[$key]=$insertedAuthor[0]->author_name;
+        }
 /* Записваме съобщение в масива $this->message за успешно добвяне на книга
-  (с нейното име и имената на автори към нея) */
-         $this->message['registerBook']='Успешно добавихте новa книга " '.
-                                         $this->insertedBook.' " с автор/автори " '.
-                                         $this->insertedAuthors[0].' '.
-                                         $this->insertedAuthors[1].' "';
-         
-          }
+(с нейното име и имената на автори към нея) */
+        $this->message['registerBook']='Успешно добавихте новa книга " '.
+                                     $this->insertedBook.' " с автор/автори " '.
+                                     $this->insertedAuthors[0].' '.
+                                     $this->insertedAuthors[1].' "';
+        }
 /* Aко има въведен критерии за търсене по заглавие на книга и
    няма въведен критерии (id) за търсене по автор,
    записваме в масива $this->message съобщение за намерени резултати с търсения резултат  */
-          if($this->search && $this->author_id==0){
-              
-             $this->message['searchBookAndAuthor']='Намерени резултати за "'.$this->search.'"';
-              
-          }
+        if($this->search && $this->author_id==0){
+            $this->message['searchBookAndAuthor']='Намерени резултати за "'.$this->search.'"';
+        }
 //Aко има въведен критерии за търсене по автор(id)    
-          if($this->author_id>0){
-//Взимаме името на автора за съответното id            
-             $author=DB::select('SELECT author_name FROM authors
-                                 WHERE author_id=?
-                                 LIMIT 1'
-                                ,array($this->author_id)); 
-/* Ако имаме търсене по автор(id) и търсене по заглавие на книга
-   записваме съобщение в масива $this->message за намерени резултати
-   с критериите на търсене по заглавие и име на автор */         
+        if($this->author_id>0){
+    //Взимаме името на автора за съответното id
+        $author=DB::select('SELECT author_name FROM authors
+                         WHERE author_id=?
+                         LIMIT 1'
+                        ,array($this->author_id)
+                );
+    /* Ако имаме търсене по автор(id) и търсене по заглавие на книга
+    записваме съобщение в масива $this->message за намерени резултати
+    с критериите на търсене по заглавие и име на автор */
              if(count($author)>0 && $this->search!=''){
-                 
-             $this->message['searchBookAndAuthor']='Намерени резултати за "'.$this->search.'" и автор "'.$author[0]->author_name.'"';
-             
+                $this->message['searchBookAndAuthor']='Намерени резултати за "'.$this->search.'" и автор "'.$author[0]->author_name.'"';
              }
-/* Ако имаме търсене по автор(id) и нямаме търсене по заглавие на книга
-   записваме съобщение в масива $this->message за намерени резултати
-   само с критерии на търсене по име на автор */        
-             if(count($author)>0 && $this->search==''){
-                 
-             $this->message['searchBookAndAuthor']='Намерени резултати за автор "'.$author[0]->author_name.'"';
-             
-             }
-              
-          }
- 
+    /* Ако имаме търсене по автор(id) и нямаме търсене по заглавие на книга
+    записваме съобщение в масива $this->message за намерени резултати
+    само с критерии на търсене по име на автор */
+            if(count($author)>0 && $this->search==''){
+            $this->message['searchBookAndAuthor']='Намерени резултати за автор "'.$author[0]->author_name.'"';
+            }
+        }
     }
 //Метод за извеждане на съобщения  
-  public function getMessage(){
-
-         return $this->message;
-           
-  }
+    public function getMessage()
+    {
+        return $this->message;
+    }
 //Чрез този метод връщаме към полетата във view-то въведените данни отговарящи на усл-ята
-  public function getInsertedData(){
-            
+    public function getInsertedData()
+    {
             return array('book_name'=>$this->book_name
-                    
+
                          );
-            
-  }
+    }
 
 }
 

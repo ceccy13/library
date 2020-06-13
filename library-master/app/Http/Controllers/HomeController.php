@@ -17,13 +17,12 @@ use App\Books;
 use App\Comments;
 use App\Users;
 
-class HomeController extends BaseController{
-
-	
+class HomeController extends BaseController
+{
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     
-    public function index(){
-		
+    public function index()
+    {
 		try {
             DB::connection()->getPdo();
         } catch (\Exception $e) {
@@ -83,9 +82,9 @@ class HomeController extends BaseController{
             return View::make('index',array('books'=>$books,'pages'=>$pages,'selectedSort'=>$selectedSort,'errorMessageUser'=>$errorMessageUser,'errorMessage'=>$errorMessage,'message'=>$message));
            
     }
-    
-    
-    public function registration(){
+
+    public function registration()
+    {
 	
 /* Ако потребителя има валидна сесия го пренасочваме към глваната страница 
   (Returning A Redirect To A Controller Action index) */
@@ -125,9 +124,9 @@ class HomeController extends BaseController{
             return View::make('registration',array('insertedData'=>$insertedData,'errorMessageUser'=>$errorMessageUser));
     
     }
-    
-    
-    public function welcome(){
+
+    public function welcome()
+    {
 	
 /* Ако потребителя има валидна сесия го пренасочваме към главната страница
   (Returning A Redirect To A Controller Action index) */
@@ -141,9 +140,9 @@ class HomeController extends BaseController{
             return View::make('welcome');
             
     }
-    
-    
-    public function books(){
+
+    public function books()
+    {
 	
 /* Ако потребителят няма валидна сесия се пренасочва към главната страница
   (Returning A Redirect To A Controller Action index)*/
@@ -181,9 +180,9 @@ class HomeController extends BaseController{
             return View::make('books',array('user'=>$user,'books'=>$books,'pages'=>$pages,'selectedSort'=>$selectedSort,'errorMessage'=>$errorMessage,'message'=>$message));
    
     }
-    
-    
-    public function comments(){
+
+    public function comments()
+    {
 	
 /* Ако потребителя няма валидна сесия се пренасочва към главната страница 
   (Returning A Redirect To A Controller Action index) */
@@ -235,9 +234,9 @@ class HomeController extends BaseController{
              return View::make('comments',array('user'=>$user,'comments'=>$comments,'bookName'=>$bookName,'pages'=>$pages,'selectedSort'=>$selectedSort,'errorMessage'=>$errorMessage,'message'=>$message));
  
     }
-    
-    
-    public function addBook($message=null){
+
+    public function addBook($message=null)
+    {
 	
 /* Ако потребителя няма валидна сесия се пренасочва към главната страница 
   (Returning A Redirect To A Controller Action index) */
@@ -282,9 +281,9 @@ class HomeController extends BaseController{
             return View::make('addBook',array('user'=>$user,'authors'=>$authors,'insertedData'=>$insertedData,'errorMessage'=>$errorMessage,'message'=>$message));
    
     }
-    
-    
-    public function addAuthor(){
+
+    public function addAuthor()
+    {
 	
 /* Ако потребителя няма валидна сесия се пренасочва към главната страница 
   (Returning A Redirect To A Controller Action index) */
@@ -325,9 +324,9 @@ class HomeController extends BaseController{
             return View::make('addAuthor',array('user'=>$user,'authors'=>$authors,'errorMessage'=>$errorMessage,'message'=>$message));
            
         }
-        
 
-   public function logout(){ 
+    public function logout()
+   {
    
 //Създаваме инстанция $user на класа Users
       $user=new Users;
