@@ -56,7 +56,7 @@ class Books
                                      ,array($this->book_name));
 /* Ако няма получени id-та за въведени автори,
    записваме съобщение за грешка в масив $this->errorMessage */
-        if(count($authors_ids)<1){
+        if(empty($authors_ids)){
            
             $this->errorMessage['registerBook'] = 'Не сте избрали автор!!!';
             $error=true;
@@ -64,7 +64,7 @@ class Books
          }
 /* Ако получените id-та за автори са повече от 2, 
    записваме съобщение за грешка в масив $this->errorMessage */
-        if(count($authors_ids)>2){
+        if(!empty($authors_ids) && count($authors_ids)>2){
            
           $this->errorMessage['registerBook'] = 'Може да изберете максимум два автора за една книга!!!';
           $error=true;
