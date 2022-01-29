@@ -30,4 +30,4 @@ if ($uri !== '/' && file_exists(__DIR__.'/'.$dir_project.'/public'.$uri)) {
 }
 
 require_once __DIR__.'/'.$dir_project.'/public/index.php';
-//test
+
